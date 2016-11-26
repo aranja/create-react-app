@@ -149,11 +149,29 @@ module.exports = {
         test: /\.json$/,
         loader: 'json'
       },
+      // Make it easy to load SVGs as inline React components. The query syntax
+      // is simpler in webpack 2.
+      {
+        test: /\.react.svg$/,
+        loader: 'babel?' + JSON.stringify({
+            // @remove-on-eject-begin
+            babelrc: false,
+            presets: [require.resolve('babel-preset-react-app')],
+            // @remove-on-eject-end
+            // See comment in js loader above.
+            cacheDirectory: findCacheDir({
+              name: 'react-scripts'
+            })
+          }) +
+          '!react-svg'
+      },
       // "file" loader makes sure those assets get served by WebpackDevServer.
       // When you `import` an asset, you get its (virtual) filename.
       // In production, they would get copied to the `build` folder.
       {
         test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
+        // Don't reprocess react svgs.
+        exclude: /\.react.svg$/,
         loader: 'file',
         query: {
           name: 'static/media/[name].[hash:8].[ext]'
