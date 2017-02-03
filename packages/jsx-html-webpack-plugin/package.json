@@ -1,0 +1,29 @@
+{
+  "name": "jsx-html-webpack-plugin",
+  "version": "0.4.2",
+  "description": "Creates html files from jsx components.",
+  "repository": "facebookincubator/create-react-app",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/facebookincubator/create-react-app/issues"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "files": [
+    "child.js",
+    "index.js"
+  ],
+  "dependencies": {
+    "babel-register": "^6.22.0",
+    "html-minifier": "^3.3.0"
+  },
+  "peerDependencies": {
+    "react": "^15.3.0",
+    "react-dom": "^15.3.0"
+  },
+  "devDependencies": {
+    "react": "^15.3.0",
+    "react-dom": "^15.3.0"
+  }
+}

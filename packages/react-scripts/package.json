@@ -53,6 +53,7 @@
     "http-proxy-middleware": "0.17.2",
     "jest": "18.1.0",
     "json-loader": "0.5.4",
+    "jsx-html-webpack-plugin": "^0.4.2",
     "object-assign": "4.1.0",
     "postcss-loader": "1.0.0",
     "promise": "7.1.1",
